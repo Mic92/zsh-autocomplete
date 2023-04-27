@@ -7,7 +7,7 @@ compstate[list]=
 compstate[restore]=
 compstate[to_end]=${${_completer:/prefix/}:+always}
 
-if _autocomplete.should_insert_unambiguous; then
+if _autocomplete.should_insert_unambiguous 2>/dev/null; then
 
   [[ $WIDGETSTYLE == (|*-)menu(|-*) ]] &&
       compstate[insert]='automenu-'

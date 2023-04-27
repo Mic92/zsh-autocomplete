@@ -8,7 +8,7 @@ if [[ $_lastcomp[tags] == history-lines && -z $compstate[old_list] ]]; then
     autocomplete:_main_complete:new - history-lines _autocomplete.history_lines
 elif [[ -z $compstate[old_list] ]] ||
     [[ -v _autocomplete__partial_list && $WIDGETSTYLE == (|*-)(list|menu)(|-*) ]] ||
-    _autocomplete.should_insert_unambiguous; then
+    _autocomplete.should_insert_unambiguous 2>/dev/null; then
   autocomplete:_main_complete:new
 else
   compstate[old_list]=keep
